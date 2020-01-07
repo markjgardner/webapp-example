@@ -19,12 +19,8 @@ stages:
         arguments: '-c Release'
         publishWebProjects: true
         zipAfterPublish: true
-    - script: dir -r
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFile: bin\Release\netcoreapp3.1\publish\
-        archiveType: zip
-        archiveFile: $(Pipeline.Workspace)/webapp.zip
+    - script: 'dir -r'
+      workingDirectory: $(Pipeline.Workspace)
     - publish: $(Pipeline.Workspace)/webapp.zip
       artifact: app 
 - stage: deploy
