@@ -34,7 +34,7 @@ stages:
           - task: AzureRmWebAppDeployment@4
             inputs:
               ConnectionType: AzureRM
-              azureSubscription: 'ARM Endpoint(created via CLI)'
+              azureSubscription: 'My ARM Endpoint'
               WebAppKind: webApp
               WebAppName: mjgweb
               Package: $(Pipeline.workspace)/app/publish.zip
