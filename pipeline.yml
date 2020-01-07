@@ -36,5 +36,5 @@ stages:
               ConnectionType: AzureRM
               azureSubscription: 'mjgweb3'
               WebAppKind: webApp
-              WebAppName: mjgweb
+              WebAppName: mjgweb2
               Package: $(Pipeline.workspace)/app/publish.zip
