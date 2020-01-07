@@ -19,9 +19,7 @@ stages:
         arguments: '-c Release'
         publishWebProjects: true
         zipAfterPublish: true
-    - powershell: 'ls -recurse'
-      workingDirectory: $(Pipeline.Workspace)
-    - publish: $(Pipeline.Workspace)/webapp.zip
+    - publish: $(Pipeline.Workspace)/bin/release/netcoreapp3.1/publish.zip
       artifact: app 
 - stage: deploy
   jobs:
