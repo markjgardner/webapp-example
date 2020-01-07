@@ -16,10 +16,15 @@ stages:
     - task: DotNetCoreCLI@2
       inputs:
         command: publish
-        arguments: '-c Release -v d'
+        arguments: '-c Release'
         publishWebProjects: true
         zipAfterPublish: true
-    - publish: $(Pipeline.Workspace)/bin/Debug/netcoreapp3.1/publish/webapp-example.zip
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: bin/release/netcoreapp3.1/publish/
+        archiveType: zip
+        archiveFile: $(Pipeline.Workspace)/webapp.zip
+    - publish: $(Pipeline.Workspace)/webapp.zip
       artifact: app 
 - stage: deploy
   jobs:
