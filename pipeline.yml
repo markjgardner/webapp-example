@@ -19,7 +19,7 @@ stages:
         arguments: '-c Release'
         publishWebProjects: true
         zipAfterPublish: true
-    - script: 'dir -r'
+    - powershell: 'ls -recurse'
       workingDirectory: $(Pipeline.Workspace)
     - publish: $(Pipeline.Workspace)/webapp.zip
       artifact: app 
