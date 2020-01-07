@@ -19,7 +19,7 @@ stages:
         arguments: '-c Release'
         publishWebProjects: true
         zipAfterPublish: true
-    - publish: $(Pipeline.Workspace)/bin/release/netcoreapp3.1/publish.zip
+    - publish: $(Pipeline.Workspace)/bin/Release/netcoreapp3.1/publish.zip
       artifact: app 
 - stage: deploy
   jobs:
